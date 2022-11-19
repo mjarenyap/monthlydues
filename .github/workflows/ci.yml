@@ -10,9 +10,10 @@ jobs:
   display:
     runs-on: ubuntu-latest
     env:
-      test_secret: Some kind of secret
+      NOTION_SECRET_KEY: ${{ secrets.NOTION_SECRET_KEY }}
+
 
     steps:
-      - name: Display the test secret
+      - name: Display Notion secret key
         run: |
-          echo "Secret value ${{ env.test_secret }}"
+          echo "Notion Secret Key: ${{ env.NOTION_SECRET_KEY }}"
